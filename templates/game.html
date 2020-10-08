@@ -1,0 +1,11 @@
+<!-- templates/game.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <a href="{{ url_for('home') }}">← Back to list</a>
+
+  <h1>{{ game.name }}</h1>
+
+  <!-- What other columns do you have in the `games` table? Use them here! -->
+{% endblock %}

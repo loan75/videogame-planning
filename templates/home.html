@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Games</h1>
+
+  <ul class="list-unstyled">
+    {% for game in games %}
+      <li>
+          <a href="{{ url_for('game_html', game_id=game.id) }}">{{ game.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
