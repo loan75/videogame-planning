@@ -17,6 +17,10 @@ flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-admin = "*"
 python-dotenv = "*"
+beautifulsoup4 = "*"
+requests = "*"
+pandas = "*"
+lxml = "*"
 
 [requires]
 python_version = "3.8"

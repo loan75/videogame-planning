@@ -1,6 +1,5 @@
 from wsgi import db
 from sqlalchemy.schema import ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
 
 
@@ -11,6 +10,7 @@ class JGamePlatform(db.Model):
     games = db.relationship("Game", backref=backref("j_games_platforms"))
     platforms = db.relationship("Platform", backref=backref("j_games_platforms"))
 
+
 class Game(db.Model):
     __tablename__ = "games"
     id = db.Column(db.Integer, primary_key=True)
@@ -20,6 +20,7 @@ class Game(db.Model):
     platforms = db.relationship("Platform", secondary="j_games_platforms", back_populates="games")
     publisher_id = db.Column(db.Integer, ForeignKey('publishers.id'))
     publisher = db.relationship("Publisher", back_populates="games")
+
 
 class Platform(db.Model):
     __tablename__ = "platforms"
